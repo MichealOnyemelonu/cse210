@@ -1,6 +1,6 @@
 // In this task i added Extra features to show my creativity:
 // I added basic error handling when saving and loading files.
-// Also added "MOOD RATING" (1–5) TO EACH ENTRY AND DISPLAYED IT WITH JOURNAL ENTRIES.
+// Also added "MOOD RATING" (1–5) to each entry and displayed it with journal entries
 
 
 using System;
