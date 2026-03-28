@@ -29,7 +29,7 @@ class Program
         videos.Add(video3);
 
         Video video4 = new Video("Error Handling in C#", "Code Simplified", 830);
-        video4.AddComment(new Comment("Jake", "Try-catch finally makes sense now."));
+        video4.AddComment(new Comment("Jake", "Try catch finally makes sense now."));
         video4.AddComment(new Comment("Karen", "Can you cover custom exceptions?"));
         video4.AddComment(new Comment("Leo", "Very useful for my school project."));
         videos.Add(video4);
@@ -54,6 +54,5 @@ class Program
 
         
         Console.WriteLine("Press any key to exit...");
-        Console.ReadKey();
     }
 }
