@@ -9,7 +9,7 @@ public class Video
     public int LengthInSeconds { get; set; }
 
     
-    private List<Comment> _comments = new List<Comment>();
+    private readonly List<Comment> _comments = new();
 
     
     public Video(string title, string author, int lengthInSeconds)
