@@ -1,7 +1,7 @@
 // EXCEEDING REQUIREMENTS:
-// Added bonus points for checklist completion
-// Used polymorphism with virtual/override methods
-// File save/load using a simple text format
+// Added a NegativeGoal type that subtracts points as a penalty
+// Introduced risk/reward mechanics for tracking bad habits
+// Extended save/load functionality to support custom goal types
 
 using System;
 

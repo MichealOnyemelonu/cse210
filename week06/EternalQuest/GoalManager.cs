@@ -31,44 +31,50 @@ class GoalManager
         }
     }
 
-    private void CreateGoal()
+   private void CreateGoal()
+{
+    Console.WriteLine("Select goal type:");
+    Console.WriteLine("1. Simple Goal");
+    Console.WriteLine("2. Eternal Goal");
+    Console.WriteLine("3. Checklist Goal");
+    Console.WriteLine("4. Negative Goal (Penalty)");
+    Console.WriteLine();
+
+    int type = int.Parse(Console.ReadLine());
+
+    Console.Write("Name: ");
+    string name = Console.ReadLine();
+
+    Console.Write("Description: ");
+    string description = Console.ReadLine();
+
+    Console.Write("Points: ");
+    int points = int.Parse(Console.ReadLine());
+
+    if (type == 1)
     {
-        Console.WriteLine("Select goal type:");
-        Console.WriteLine("1. Simple Goal");
-        Console.WriteLine("2. Eternal Goal");
-        Console.WriteLine("3. Checklist Goal");
-        Console.WriteLine();
-
-        int type = int.Parse(Console.ReadLine());
-
-        Console.Write("Name: ");
-        string name = Console.ReadLine();
-
-        Console.Write("Description: ");
-        string description = Console.ReadLine();
-
-        Console.Write("Points: ");
-        int points = int.Parse(Console.ReadLine());
-
-        if (type == 1)
-        {
-            _goals.Add(new SimpleGoal(name, description, points));
-        }
-        else if (type == 2)
-        {
-            _goals.Add(new EternalGoal(name, description, points));
-        }
-        else if (type == 3)
-        {
-            Console.Write("Target count: ");
-            int target = int.Parse(Console.ReadLine());
-
-            Console.Write("Bonus points: ");
-            int bonus = int.Parse(Console.ReadLine());
-
-            _goals.Add(new ChecklistGoal(name, description, points, target, bonus));
-        }
+        _goals.Add(new SimpleGoal(name, description, points));
     }
+    else if (type == 2)
+    {
+        _goals.Add(new EternalGoal(name, description, points));
+    }
+    else if (type == 3)
+    {
+        Console.Write("Target count: ");
+        int target = int.Parse(Console.ReadLine());
+
+        Console.Write("Bonus points: ");
+        int bonus = int.Parse(Console.ReadLine());
+
+        _goals.Add(new ChecklistGoal(name, description, points, target, bonus));
+    }
+    else if (type == 4)
+    {
+        _goals.Add(new NegativeGoal(name, description, points));
+    }
+}
+
 
     private void ListGoals()
     {
@@ -120,6 +126,9 @@ class GoalManager
 
             else if (parts[0] == "Eternal")
                 _goals.Add(new EternalGoal(parts[1], parts[2], int.Parse(parts[3])));
+
+            else if (parts[0] == "Negative")
+                _goals.Add(new NegativeGoal(parts[1], parts[2], int.Parse(parts[3])));
 
             else if (parts[0] == "Checklist")
                 _goals.Add(new ChecklistGoal(parts[1], parts[2],
